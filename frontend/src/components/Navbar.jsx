@@ -17,9 +17,13 @@ function Navbar() {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-dark navbar-dark ">
+      <nav className="navbar navbar-expand-lg bg-white navbar-light border-bottom shadow-sm ">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+          <Link
+            className="navbar-brand  fw-bold"
+            to="/"
+            style={{ color: "#6366f1" }}
+          >
             iNotebook
           </Link>
           <button
@@ -37,7 +41,7 @@ function Navbar() {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <Link
-                  className={`nav-link ${
+                  className={`nav-link fw-semibold ${
                     location.pathname === "/" ? "active" : ""
                   }`}
                   aria-current="page"
@@ -60,14 +64,14 @@ function Navbar() {
             {!localStorage.getItem("token") ? (
               <form action="" className="d-flex">
                 <Link
-                  className="btn btn-primary mx-1"
+                  className="btn btn-outline-primary mx-1"
                   to="/login"
                   role="button"
                 >
                   Login
                 </Link>
                 <Link
-                  className="btn btn-primary mx-1"
+                  className="btn btn-outline-primary mx-1"
                   to="/signup"
                   role="button"
                 >
@@ -75,27 +79,27 @@ function Navbar() {
                 </Link>
               </form>
             ) : (
-              <div>
+              <div className="d-flex flex-column  flex-lg-row align-items-lg-center">
+                {/* experimenting from now */}
+                <i
+                  className="fa-solid fa-user mx-lg-4 mx-sm-2 "
+                  style={{
+                    backgroundColor: "#f3f4f6", // light gray
+                    color: "#6366f1", // primary indigo
+                    padding: "8px",
+                    borderRadius: "50%",
+                    cursor: "pointer",
+                  }}
+                  onClick={handlProfileClick}
+                ></i>
                 <div className="d-flex flex-column flex-lg-row ">
                   <div
                     style={{ maxWidth: "fit-content" }}
-                    className="btn btn-primary"
+                    className="btn btn-outline-primary mt-s-2"
                     onClick={handleLogout}
                   >
                     Logout
                   </div>
-
-                  {/* experimenting from now */}
-                  <i
-                    className="fa-solid fa-user mx-lg-4 mx-sm-2"
-                    style={{
-                      backgroundColor: "black",
-                      color: "white",
-                      padding: "10px",
-                      borderRadius: "50%",
-                    }}
-                    onClick={handlProfileClick}
-                  ></i>
 
                   <div>
                     {/* <!-- Button trigger modal --> */}

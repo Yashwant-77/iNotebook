@@ -21,7 +21,10 @@ function About() {
           qui rerum perferendis corrupti enim, at sunt saepe dolores! Earum
           nobis eum dolore!
         </p>
-        <button className="btn btn-primary" onClick={handleEmailUsClick}>
+        <button
+          className="btn btn-outline-primary"
+          onClick={handleEmailUsClick}
+        >
           Email Us
         </button>
       </div>
