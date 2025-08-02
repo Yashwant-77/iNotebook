@@ -17,7 +17,7 @@ function SignUp({ showAlert }) {
       return;
     }
     const { name, email, password } = crendentials;
-    const response = await fetch("http://localhost:5000/api/auth/createuser", {
+    const response = await fetch("https://inotebook-2-748t.onrender.com/api/auth/createuser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
